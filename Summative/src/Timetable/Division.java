@@ -1,4 +1,4 @@
-package sample;
+package Timetable;
 
 import java.io.Serializable;
 import java.util.ArrayList;
