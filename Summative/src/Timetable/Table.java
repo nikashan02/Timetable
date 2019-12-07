@@ -87,7 +87,7 @@ public class Table implements Serializable {
                 }
             }
             fit = true;
-            for (int b = 0; b < 2; b++) {
+            for (int b = 0; b<2; b++) {
                 for (Classroom currentClass : table.get(b)) {
                     if (currentClass.getNumberOfStudents() < 15) {
                         fit = false;
