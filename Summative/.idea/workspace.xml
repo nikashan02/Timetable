@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Timetable/FunctionMethods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Timetable/Table.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Summative/Timetable/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timetable/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timetable/Division.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/Classroom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timetable/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/Student.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
