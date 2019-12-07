@@ -1,80 +1,43 @@
 package Timetable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Student implements Serializable {
-    private String firstName;
-    private String lastName;
-    private int studentNumber;
-    private int grade;
-    private int average;
-    private boolean ossltCompletion;
-    private boolean volunteerCompletion;
-    private int credits;
+    private String name;
+    private String studentNumber;
+    private String grade;
+    private ArrayList<Course> coursesChosen;
 
     //CONSTRUCTOR
-    public Student(String firstName, String lastName, int studentNumber, int grade,
-                   int average, boolean ossltCompletion, boolean volunteerCompletion, int credits) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Student(String name, String studentNumber, String grade, ArrayList<Course> coursesChosen) {
+        this.name = name;
         this.studentNumber = studentNumber;
         this.grade = grade;
-        this.average = average;
-        this.ossltCompletion = ossltCompletion;
-        this.volunteerCompletion = volunteerCompletion;
-        this.credits = credits;
+        this.coursesChosen = coursesChosen;
     }
 
     //GETTERS
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
-    public String getLastName() {
-        return lastName;
-    }
-    public int getStudentNumber() {
+    public String getStudentNumber() {
         return studentNumber;
     }
-    public int getGrade() {
+    public String getGrade() {
         return grade;
     }
-    public int getAverage() {
-        return average;
-    }
-    public boolean getOssltCompletion() {
-        return ossltCompletion;
-    }
-    public boolean getVolunteerCompletion() {
-        return volunteerCompletion;
-    }
-    public int getCredits() {
-        return credits;
-    }
+    public ArrayList<Course> getCoursesChosen() { return coursesChosen; }
 
     //SETTERS
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-    public void setStudentNumber(int studentNumber) {
+    public void setStudentNumber(String studentNumber) {
         this.studentNumber = studentNumber;
     }
-    public void setGrade(int grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
-    public void setAverage(int average) {
-        this.average = average;
-    }
-    public void setOssltCompletion(boolean ossltCompletion) {
-        this.ossltCompletion = ossltCompletion;
-    }
-    public void setVolunteerCompletion(boolean volunteerCompletion) {
-        this.volunteerCompletion = volunteerCompletion;
-    }
-    public void setCredit(int credits) {
-        this.credits = credits;
-    }
+    public void setCoursesChosen(ArrayList<Course> coursesChosen) { this.coursesChosen = coursesChosen; }
 }
