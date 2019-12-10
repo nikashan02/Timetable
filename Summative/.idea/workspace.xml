@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Timetable/Teacher.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/stuff.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Summative/Timetable/Course.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/Division.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Summative/Timetable/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Summative/Timetable/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/Teacher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timetable/FunctionMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/FunctionMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timetable/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timetable/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/Table.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +99,13 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
