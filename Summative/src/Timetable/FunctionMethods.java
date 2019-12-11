@@ -7,13 +7,12 @@ import java.util.Scanner;
 
 public class FunctionMethods {
 
-    public ArrayList<Student> importStudents(String name) {
-        String fileName = name + ".csv";
+    public static ArrayList<Student> importStudents(String name) {
+        String fileName = name;
         File file = new File(fileName);
         ArrayList<Student> listOfStudents = new ArrayList<Student>();
         try {
             Scanner inputStream = new Scanner(file);
-            inputStream.next(); //Ignore first line
             while(inputStream.hasNext()) {
                 String data = inputStream.next();
                 String[] values = data.split(",");
