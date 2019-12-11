@@ -31,9 +31,11 @@ public class Main { //extends Application {
             System.out.println("Uh oh");
         }
         int classroomCount = 0;
+        //int lessThan15 = 0;
         for (ArrayList<Classroom> currentClassList : masterTable.getTable()) {
             for (Classroom currentClassroom : currentClassList) {
                 System.out.println(currentClassroom.getNumberOfStudents());
+
                 classroomCount++;
             }
         }
