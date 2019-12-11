@@ -40,4 +40,5 @@ public class Student implements Serializable {
         this.grade = grade;
     }
     public void setCoursesChosen(ArrayList<Course> coursesChosen) { this.coursesChosen = coursesChosen; }
+
 }
