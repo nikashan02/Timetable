@@ -1,6 +1,6 @@
 package Timetable;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -23,9 +23,24 @@ public class Table implements Serializable {
     }
 
     //METHODS
-    public void createMasterTimetable(ArrayList<Student> listOfStudents) {
+    public void createMasterTimetable(ArrayList<Student> listOfStudents) throws IOException, ClassNotFoundException {
 
-        ArrayList<Student> originalStudentList = new ArrayList<Student>(listOfStudents);
+        //CLONING
+        ByteArrayOutputStream studentBos = new ByteArrayOutputStream();
+        ObjectOutputStream studentOos = new ObjectOutputStream(studentBos);
+
+        studentOos.writeObject(listOfStudents);		// serialize
+        studentOos.flush();
+
+        // toByteArray creates & returns a copy of stream’s byte array
+        byte[] studentBytes = studentBos.toByteArray();
+
+        ByteArrayInputStream studentBis = new ByteArrayInputStream(studentBytes);
+
+        ObjectInputStream studentOis = new ObjectInputStream(studentBis);
+
+        ArrayList<Student> originalStudentList = (ArrayList<Student>) studentOis.readObject();
+
         Random randomGen = new Random();
         boolean fit = false;
         table.add(new ArrayList<Classroom>());
@@ -38,20 +53,38 @@ public class Table implements Serializable {
 
 
                 for (Student currentStudent : listOfStudents) {
-                    ArrayList<Course> tempListOfCourses = new ArrayList<Course>(listOfCourses);
-                    ArrayList<Classroom> tempArrClassroomA;
-                    ArrayList<Classroom> tempArrClassroomB;
-                    if (a == 0) {
-                        tempArrClassroomA = new ArrayList<Classroom>(table.get(a));
-                        tempArrClassroomB = new ArrayList<Classroom>(table.get(a+1));
-                    }
-                    else {
-                        tempArrClassroomA = new ArrayList<Classroom>(table.get(a-1));
-                        tempArrClassroomB = new ArrayList<Classroom>(table.get(a));
-                    }
-                    ArrayList<ArrayList<Classroom>> tempTable = new ArrayList<ArrayList<Classroom>>();
-                    tempTable.add(tempArrClassroomA);
-                    tempTable.add(tempArrClassroomB);
+
+                    //CLONING
+                    ByteArrayOutputStream courseBos = new ByteArrayOutputStream();
+                    ObjectOutputStream courseOos = new ObjectOutputStream(courseBos);
+
+                    courseOos.writeObject(listOfCourses);		// serialize
+                    courseOos.flush();
+
+                    // toByteArray creates & returns a copy of stream’s byte array
+                    byte[] courseBytes = courseBos.toByteArray();
+
+                    ByteArrayInputStream courseBis = new ByteArrayInputStream(courseBytes);
+
+                    ObjectInputStream courseOis = new ObjectInputStream(courseBis);
+
+                    ArrayList<Course> tempListOfCourses = (ArrayList<Course>) courseOis.readObject();
+
+                    //CLONING
+                    ByteArrayOutputStream newBos = new ByteArrayOutputStream();
+                    ObjectOutputStream newOos = new ObjectOutputStream(newBos);
+
+                    newOos.writeObject(table);		// serialize
+                    newOos.flush();
+
+                    // toByteArray creates & returns a copy of stream’s byte array
+                    byte[] newBytes = newBos.toByteArray();
+
+                    ByteArrayInputStream newBis = new ByteArrayInputStream(newBytes);
+
+                    ObjectInputStream newOis = new ObjectInputStream(newBis);
+                    ArrayList<ArrayList<Classroom>> tempTable = (ArrayList<ArrayList<Classroom>>) newOis.readObject();        // deserialize & typecast
+
                     boolean checkFour = false;
 
                     while (!checkFour) {
@@ -70,7 +103,7 @@ public class Table implements Serializable {
                                 listOfCourses.add(currentCourse);
                                 int randomPeriod = 0;
                                 while (randomPeriod == 0) {
-                                    randomPeriod = randomGen.nextInt(4);
+                                    randomPeriod = randomGen.nextInt(5);
                                 }
                                 ArrayList<Student> newStudents = new ArrayList<Student>();
                                 boolean inClass = false;
@@ -93,7 +126,23 @@ public class Table implements Serializable {
                                     }
                                 }
                                 if (!inClass) {
-                                    newStudents.add(currentStudent);
+
+                                    //CLONING
+                                    ByteArrayOutputStream temp1Bos = new ByteArrayOutputStream();
+                                    ObjectOutputStream temp1Oos = new ObjectOutputStream(temp1Bos);
+
+                                    temp1Oos.writeObject(currentStudent);		// serialize
+                                    temp1Oos.flush();
+
+                                    // toByteArray creates & returns a copy of stream’s byte array
+                                    byte[] temp1Bytes = temp1Bos.toByteArray();
+
+                                    ByteArrayInputStream temp1Bis = new ByteArrayInputStream(temp1Bytes);
+
+                                    ObjectInputStream temp1Ois = new ObjectInputStream(temp1Bis);
+                                    Student temp1Clone = (Student) temp1Ois.readObject();
+
+                                    newStudents.add(temp1Clone);
                                     coursesToRemove.add(currentCourse);
                                     table.get(a).add(new Classroom(currentCourse, currentCourse.getCourseCode() + "1", Classroom.getTeacherCount() + 1, randomPeriod, newStudents));
                                 }
@@ -129,7 +178,24 @@ public class Table implements Serializable {
                                             }
 
                                             if (!inClass) {
-                                                table.get(a).get(x).addStudent(currentStudent); //This for some reason adds to tempTable as well??? - .addStudent is the problem
+
+                                                //CLONING
+                                                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                                                ObjectOutputStream oos = new ObjectOutputStream(bos);
+
+                                                oos.writeObject(currentStudent);	//serialize
+                                                oos.flush();
+
+                                                //toByteArray creates & returns a copy of stream’s byte array
+                                                byte[] bytes = bos.toByteArray();
+
+                                                ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+
+                                                ObjectInputStream ois = new ObjectInputStream(bis);
+                                                Student clone = (Student) ois.readObject();  // deserialize & typecast
+
+
+                                                table.get(a).get(x).addStudent(clone); //Fixed
                                                 coursesToRemove.add(currentCourse);
                                                 added = true;
                                                 break;
@@ -141,7 +207,7 @@ public class Table implements Serializable {
                                 if (!added) {
                                     int randomPeriod = 0;
                                     while (randomPeriod == 0) {
-                                        randomPeriod = randomGen.nextInt(4);
+                                        randomPeriod = randomGen.nextInt(5);
                                     }
                                     ArrayList<Student> newStudents = new ArrayList<Student>();
                                     boolean inClass = false;
@@ -162,7 +228,23 @@ public class Table implements Serializable {
                                         }
                                     }
                                     if (!inClass) {
-                                        newStudents.add(currentStudent);
+
+                                        //CLONING
+                                        ByteArrayOutputStream tempBos = new ByteArrayOutputStream();
+                                        ObjectOutputStream tempOos = new ObjectOutputStream(tempBos);
+
+                                        tempOos.writeObject(currentStudent);		// serialize
+                                        tempOos.flush();
+
+                                        // toByteArray creates & returns a copy of stream’s byte array
+                                        byte[] tempBytes = tempBos.toByteArray();
+
+                                        ByteArrayInputStream tempBis = new ByteArrayInputStream(tempBytes);
+
+                                        ObjectInputStream tempOis = new ObjectInputStream(tempBis);
+                                        Student temp2Clone = (Student) tempOis.readObject();
+
+                                        newStudents.add(temp2Clone);
                                         coursesToRemove.add(currentCourse);
                                         table.get(a).add(new Classroom(currentCourse, currentCourse.getCourseCode() + Integer.toString(Classroom.getTeacherCount() + 1), Classroom.getTeacherCount() + 1, randomPeriod, newStudents));
                                     }
@@ -171,23 +253,32 @@ public class Table implements Serializable {
                             }
                         }
                         checkFour = false;
-                        if (coursesToRemove.size() >= 3) {
+                        if (coursesToRemove.size() >= 4) {
                             checkFour = true;
-                            System.out.println(coursesToRemove.size());
                             currentStudent.getCoursesChosen().removeAll(coursesToRemove);
-                            /*
-                            for (ArrayList<Classroom> currentClassList : table) {
-                                for (Classroom current : currentClassList) {
-                                    System.out.println(current.getNumberOfStudents());
-                                }
-                            }
-
-                             */
                         }
                         else {
-                            System.out.println(coursesToRemove.size());
+                            if (coursesToRemove.size() == 0) {
+                                System.out.println("uhhhhhhhh");
+                            }
                             listOfCourses = tempListOfCourses;
-                            table = tempTable;
+
+                            //CLONING
+                            ByteArrayOutputStream tempTableBos = new ByteArrayOutputStream();
+                            ObjectOutputStream tempTableOos = new ObjectOutputStream(tempTableBos);
+
+                            tempTableOos.writeObject(tempTable);		// serialize
+                            tempTableOos.flush();
+
+                            // toByteArray creates & returns a copy of stream’s byte array
+                            byte[] tempTableBytes = tempTableBos.toByteArray();
+
+                            ByteArrayInputStream tempTableBis = new ByteArrayInputStream(tempTableBytes);
+
+                            ObjectInputStream tempTableOis = new ObjectInputStream(tempTableBis);
+                            ArrayList<ArrayList<Classroom>> temp2Table = (ArrayList<ArrayList<Classroom>>) tempTableOis.readObject();
+
+                            table = temp2Table;
                         }
                     }
                 }
@@ -205,7 +296,27 @@ public class Table implements Serializable {
                     }
                 }
             }
-            listOfStudents = originalStudentList;
+
+            if (!fit) {
+
+                //CLONING
+                ByteArrayOutputStream studentOGBos = new ByteArrayOutputStream();
+                ObjectOutputStream studentOGOos = new ObjectOutputStream(studentBos);
+
+                studentOos.writeObject(originalStudentList);		// serialize
+                studentOos.flush();
+
+                // toByteArray creates & returns a copy of stream’s byte array
+                byte[] studentOGBytes = studentOGBos.toByteArray();
+
+                ByteArrayInputStream studentOGBis = new ByteArrayInputStream(studentOGBytes);
+
+                ObjectInputStream studentOGOis = new ObjectInputStream(studentOGBis);
+
+                ArrayList<Student> originalOGStudentList = (ArrayList<Student>) studentOis.readObject();
+
+                listOfStudents = originalOGStudentList;
+            }
         }
     }
 }

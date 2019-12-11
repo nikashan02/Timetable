@@ -25,11 +25,18 @@ public class Main { //extends Application {
          */
         ArrayList<ArrayList<Classroom>> outerList = new ArrayList<ArrayList<Classroom>>(2);
         Table masterTable = new Table(outerList);
-        masterTable.createMasterTimetable(listStudents);
+        try {
+            masterTable.createMasterTimetable(listStudents);
+        } catch (Exception e) {
+            System.out.println("Uh oh");
+        }
+        int classroomCount = 0;
         for (ArrayList<Classroom> currentClassList : masterTable.getTable()) {
             for (Classroom currentClassroom : currentClassList) {
                 System.out.println(currentClassroom.getNumberOfStudents());
+                classroomCount++;
             }
         }
+        System.out.println(classroomCount);
     }
 }
