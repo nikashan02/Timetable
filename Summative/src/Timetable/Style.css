@@ -1,0 +1,24 @@
+.button {
+    -fx-background-color: #ffffff;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-font-family: "Comfortaa";
+
+}
+
+.button:hover {
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-background-color: #cfcfcf;
+    -fx-rotate: -3;
+}
+
+.button:pressed{
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-border-width: 5;
+    -fx-rotate: 0;
+    -fx-border-color: #9ccff5;
+}

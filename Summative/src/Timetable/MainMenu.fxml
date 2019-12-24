@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #C2941B;" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Timetable.MainMenu">
+   <children>
+      <VBox layoutX="141.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8C1C3A;">
+               <children>
+                  <Label alignment="CENTER" text="TIME TABLE" textFill="WHITE" HBox.hgrow="NEVER">
+                     <font>
+                        <Font name="Monospaced Bold" size="45.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="Create New Master Timetable" textAlignment="CENTER" wrapText="true" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="See Student Info" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </HBox.margin></Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="Add Student " textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin></Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="Remove Student" textAlignment="CENTER" wrapText="true" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></HBox>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
+               <children>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="See List Of All Courses" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="See List Of All Classrooms" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="View Timetable" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="30.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="Save and Quit" textAlignment="CENTER" wrapText="true" />
+               </children></HBox>
+
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8C1C3A;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Label alignment="CENTER" text="\@StrDesigns" textFill="WHITE">
+                     <font>
+                        <Font name="Monospaced Bold" size="45.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
