@@ -58,7 +58,7 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <Label alignment="CENTER" text="\@StrDesigns" textFill="WHITE">
+                  <Label alignment="CENTER" text="© str() Designs 2020" textFill="WHITE">
                      <font>
                         <Font name="Monospaced Bold" size="45.0" />
                      </font>

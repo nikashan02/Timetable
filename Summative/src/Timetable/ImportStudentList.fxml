@@ -52,7 +52,7 @@
                </children></HBox>
                 <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
                <children>
-                  <Label alignment="CENTER" text="\@StrDesigns" textAlignment="CENTER" textFill="WHITE">
+                  <Label alignment="CENTER" text="© str() Designs 2020" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font name="Monospaced Bold" size="45.0" />
                      </font>
