@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #c2941b;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Timetable.ImportStudentList">
+
+    <children>
+        <VBox layoutX="141.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
+                    <children>
+                        <Label alignment="CENTER" text="TIME TABLE" textFill="WHITE" HBox.hgrow="NEVER">
+                            <font>
+                                <Font name="Monospaced Bold" size="45.0" />
+                            </font></Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
+               <children>
+                  <VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="635.0" style="-fx-background-color: #595959;">
+                     <children>
+                        <Label text="Select Student List File" textFill="WHITE">
+                           <font>
+                              <Font name="Comfortaa Bold" size="38.0" />
+                           </font></Label>
+                        <Button id="browse" fx:id="browse" mnemonicParsing="false" onAction="#ButtonAction" stylesheets="@Style.css" text="Browse">
+                           <VBox.margin>
+                              <Insets top="100.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Comfortaa Bold" size="35.0" />
+                           </font></Button>
+                     </children></VBox>
+                  <VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="635.0" style="-fx-background-color: #595959;">
+                     <children>
+                        <Label fx:id="fileLabel" textFill="WHITE">
+                           <font>
+                              <Font size="38.0" />
+                           </font></Label>
+                        <Button id="create" fx:id="create" mnemonicParsing="false" onAction="#setCreate" stylesheets="@Style.css" text="Create Master Timetable">
+                           <VBox.margin>
+                              <Insets top="100.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Comfortaa Bold" size="35.0" />
+                           </font></Button>
+                     </children>
+                  </VBox>
+               </children></HBox>
+                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
+               <children>
+                  <Label alignment="CENTER" text="\@StrDesigns" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Monospaced Bold" size="45.0" />
+                     </font>
+                  </Label>
+               </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+
+</AnchorPane>

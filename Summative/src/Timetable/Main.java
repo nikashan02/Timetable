@@ -14,16 +14,20 @@ import java.util.ArrayList;
 
 public class Main extends Application {
 
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         primaryStage.setTitle("Meadowvale Secondary School");
         primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
         launch(args);
+
+
         /*
         ArrayList<Student> listStudents = FunctionMethods.importStudents("stuff.csv");
 
