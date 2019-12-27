@@ -20,7 +20,7 @@
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
                <children>
                   <Button fx:id="createTimetable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#ButtonAction" prefHeight="215.0" prefWidth="280.0" text="Create New Master Timetable" textAlignment="CENTER" wrapText="true" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="See Student Info" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="studentInfoBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#seeStudentInfoBtnAction" prefHeight="215.0" prefWidth="280.0" text="See Student Info" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </HBox.margin></Button>
@@ -58,7 +58,7 @@
                   <Insets />
                </VBox.margin>
                <children>
-                  <Label alignment="CENTER" text="\@StrDesigns" textFill="WHITE">
+                  <Label alignment="CENTER" text="© str() Designs 2020" textFill="WHITE">
                      <font>
                         <Font name="Monospaced Bold" size="45.0" />
                      </font>

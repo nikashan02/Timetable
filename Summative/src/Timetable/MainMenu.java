@@ -18,6 +18,8 @@ import java.io.IOException;
 public class MainMenu {
     @FXML
     Button createTimetable = new Button();
+    @FXML
+    Button studentInfoBtn = new Button();
 
 
 
@@ -29,6 +31,16 @@ public class MainMenu {
         appStage.show();
 
     }
+
+    public void seeStudentInfoBtnAction(ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("SeeStudentInfo.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+
+    }
+
 
 
 }
