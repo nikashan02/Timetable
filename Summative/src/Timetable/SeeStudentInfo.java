@@ -1,5 +1,7 @@
 package Timetable;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
@@ -27,8 +30,11 @@ public class SeeStudentInfo {
     Button searchBtn = new Button();
     @FXML
     ListView studentsListView = new ListView();
+    ObservableList<Student> secondaryList = FXCollections.observableArrayList();
     @FXML
     Button mainMenuBtn = new Button();
+    @FXML
+    ListView chosenStudentInfo = new ListView();
 
     private String studentNumber = "";
     private String studentName = "";
@@ -48,10 +54,12 @@ public class SeeStudentInfo {
 
     public void searchBtn(ActionEvent event){
         studentsListView.getItems().clear();
+        secondaryList.removeAll();
         if (studentNumberTextField.getText().equals("")){
             if (ImportStudentList.getListStudents() != null){
                 for (Student student: ImportStudentList.getListStudents()){
                     if (student.getName().contains(studentName)){
+                        secondaryList.add(student);
                         studentsListView.getItems().add(student.getName());
                     }
                 }
@@ -61,12 +69,22 @@ public class SeeStudentInfo {
             if (ImportStudentList.getListStudents() != null){
                 for (Student student: ImportStudentList.getListStudents()){
                     if (student.getStudentNumber().contains(studentNumber)){
+                        secondaryList.add(student);
                         studentsListView.getItems().add(student.getName());
                     }
                 }
             }
         }
     }
+    /*
+    @FXML
+    private void displayStudentInfo(ActionEvent event){
+        System.out.println("Yuh");
+        String chosenStudentName = (String) studentsListView.getSelectionModel().getSelectedItem();
+        System.out.println(chosenStudentName);
+    }
+    */
+
     public void backToMainMenu(ActionEvent event) throws IOException {
         Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         Scene pageScene = new Scene(page);
