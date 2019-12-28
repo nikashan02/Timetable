@@ -30,11 +30,10 @@ public class SeeStudentInfo {
     Button searchBtn = new Button();
     @FXML
     ListView studentsListView = new ListView();
-    ObservableList<Student> secondaryList = FXCollections.observableArrayList();
     @FXML
     Button mainMenuBtn = new Button();
     @FXML
-    ListView chosenStudentInfo = new ListView();
+    ListView chosenStudentInfoListView = new ListView();
 
     private String studentNumber = "";
     private String studentName = "";
@@ -54,13 +53,13 @@ public class SeeStudentInfo {
 
     public void searchBtn(ActionEvent event){
         studentsListView.getItems().clear();
-        secondaryList.removeAll();
         if (studentNumberTextField.getText().equals("")){
             if (ImportStudentList.getListStudents() != null){
                 for (Student student: ImportStudentList.getListStudents()){
                     if (student.getName().contains(studentName)){
-                        secondaryList.add(student);
+                        studentsListView.getItems().add(student.getStudentNumber());
                         studentsListView.getItems().add(student.getName());
+                        studentsListView.getItems().add("");
                     }
                 }
             }
@@ -69,13 +68,15 @@ public class SeeStudentInfo {
             if (ImportStudentList.getListStudents() != null){
                 for (Student student: ImportStudentList.getListStudents()){
                     if (student.getStudentNumber().contains(studentNumber)){
-                        secondaryList.add(student);
+                        studentsListView.getItems().add(student.getStudentNumber());
                         studentsListView.getItems().add(student.getName());
+                        studentsListView.getItems().add("");
                     }
                 }
             }
         }
     }
+
     /*
     @FXML
     private void displayStudentInfo(ActionEvent event){
@@ -83,7 +84,27 @@ public class SeeStudentInfo {
         String chosenStudentName = (String) studentsListView.getSelectionModel().getSelectedItem();
         System.out.println(chosenStudentName);
     }
-    */
+     */
+
+    @FXML public void handleMouseClick() {
+        int lineNumber = studentsListView.getSelectionModel().getSelectedIndex() + 1;
+        if (lineNumber%3 == 1) {
+            chosenStudentInfoListView.getItems().clear();
+            for (Student currentStudent: ImportStudentList.getListStudents()) {
+                if (currentStudent.getStudentNumber().equals(studentsListView.getSelectionModel().getSelectedItem())) {
+                    chosenStudentInfoListView.getItems().add(currentStudent.getStudentNumber());
+                    chosenStudentInfoListView.getItems().add(currentStudent.getName());
+                    chosenStudentInfoListView.getItems().add(currentStudent.getGrade());
+                    chosenStudentInfoListView.getItems().add("");
+                    for (Course currentCourse: currentStudent.getCoursesChosen()) {
+                        chosenStudentInfoListView.getItems().add(currentCourse.getCourseCode());
+                        System.out.println(currentCourse.getCourseCode());
+                    }
+                }
+            }
+        }
+    }
+
 
     public void backToMainMenu(ActionEvent event) throws IOException {
         Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
@@ -91,7 +112,6 @@ public class SeeStudentInfo {
         Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         appStage.setScene(pageScene);
         appStage.show();
-
     }
 
 }

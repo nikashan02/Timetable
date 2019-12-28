@@ -1,5 +1,6 @@
 package Timetable;
 
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -8,11 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 
@@ -30,9 +31,13 @@ public class ImportStudentList {
     @FXML
     Button mainMenuBtn = new Button();
 
+    @FXML
+    public ProgressBar progressBar = new ProgressBar(0);
+
     public String fileName = "";
 
     private static ArrayList<Student> listStudents = null;
+    private static ArrayList<Student> cloneOfListStudents = null;
 
 
 
@@ -52,32 +57,35 @@ public class ImportStudentList {
 
     }
 
-    public void setCreate(ActionEvent event) {
+    public void setCreate(ActionEvent event) throws IOException, ClassNotFoundException{
         listStudents = FunctionMethods.importStudents(fileName);
+
+        ByteArrayOutputStream workingBos = new ByteArrayOutputStream();
+        ObjectOutputStream workingOos = new ObjectOutputStream(workingBos);
+
+        workingOos.writeObject(listStudents);		// serialize
+        workingOos.flush();
+
+        // toByteArray creates & returns a copy of stream’s byte array
+        byte[] workingBytes = workingBos.toByteArray();
+
+        ByteArrayInputStream workingBis = new ByteArrayInputStream(workingBytes);
+
+        ObjectInputStream workingOis = new ObjectInputStream(workingBis);
+
+        cloneOfListStudents = (ArrayList<Student>) workingOis.readObject();
 
         ArrayList<ArrayList<Classroom>> outerList = new ArrayList<ArrayList<Classroom>>(2);
         Table masterTable = new Table(outerList);
         try {
             masterTable.createMasterTimetable(listStudents);
         } catch (Exception e) {
-            System.out.println("Uh oh");
+            System.out.println("Oh");
         }
-        /*
-        int classroomCount = 0;
-        //int lessThan15 = 0;
-        for (ArrayList<Classroom> currentClassList : masterTable.getTable()) {
-            for (Classroom currentClassroom : currentClassList) {
-                System.out.println(currentClassroom.getNumberOfStudents());
-
-                classroomCount++;
-            }
-        }
-        System.out.println(classroomCount);
-        */
     }
 
     public static ArrayList<Student> getListStudents(){
-        return listStudents;
+        return cloneOfListStudents;
     }
 
     public void backToMainMenu(ActionEvent event) throws IOException {

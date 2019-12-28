@@ -110,7 +110,7 @@
                                        <children>
                                           <ScrollPane prefHeight="304.0" prefWidth="636.0">
                                              <content>
-                                                <ListView fx:id="studentsListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="292.0" prefWidth="635.0" />
+                                                <ListView fx:id="studentsListView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleMouseClick" prefHeight="292.0" prefWidth="635.0" />
                                              </content>
                                           </ScrollPane>
                                        </children>

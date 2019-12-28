@@ -1,5 +1,7 @@
 package Timetable;
 
+import javafx.concurrent.Task;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
@@ -29,7 +31,7 @@ public class Table implements Serializable {
         ByteArrayOutputStream studentBos = new ByteArrayOutputStream();
         ObjectOutputStream studentOos = new ObjectOutputStream(studentBos);
 
-        studentOos.writeObject(listOfStudents);		// serialize
+        studentOos.writeObject(listOfStudents);        // serialize
         studentOos.flush();
 
         // toByteArray creates & returns a copy of stream’s byte array
@@ -58,7 +60,7 @@ public class Table implements Serializable {
                     ByteArrayOutputStream courseBos = new ByteArrayOutputStream();
                     ObjectOutputStream courseOos = new ObjectOutputStream(courseBos);
 
-                    courseOos.writeObject(listOfCourses);		// serialize
+                    courseOos.writeObject(listOfCourses);        // serialize
                     courseOos.flush();
 
                     // toByteArray creates & returns a copy of stream’s byte array
@@ -74,7 +76,7 @@ public class Table implements Serializable {
                     ByteArrayOutputStream newBos = new ByteArrayOutputStream();
                     ObjectOutputStream newOos = new ObjectOutputStream(newBos);
 
-                    newOos.writeObject(table);		// serialize
+                    newOos.writeObject(table);        // serialize
                     newOos.flush();
 
                     // toByteArray creates & returns a copy of stream’s byte array
@@ -131,7 +133,7 @@ public class Table implements Serializable {
                                     ByteArrayOutputStream temp1Bos = new ByteArrayOutputStream();
                                     ObjectOutputStream temp1Oos = new ObjectOutputStream(temp1Bos);
 
-                                    temp1Oos.writeObject(currentStudent);		// serialize
+                                    temp1Oos.writeObject(currentStudent);        // serialize
                                     temp1Oos.flush();
 
                                     // toByteArray creates & returns a copy of stream’s byte array
@@ -183,7 +185,7 @@ public class Table implements Serializable {
                                                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                                                 ObjectOutputStream oos = new ObjectOutputStream(bos);
 
-                                                oos.writeObject(currentStudent);	//serialize
+                                                oos.writeObject(currentStudent);    //serialize
                                                 oos.flush();
 
                                                 //toByteArray creates & returns a copy of stream’s byte array
@@ -233,7 +235,7 @@ public class Table implements Serializable {
                                         ByteArrayOutputStream tempBos = new ByteArrayOutputStream();
                                         ObjectOutputStream tempOos = new ObjectOutputStream(tempBos);
 
-                                        tempOos.writeObject(currentStudent);		// serialize
+                                        tempOos.writeObject(currentStudent);        // serialize
                                         tempOos.flush();
 
                                         // toByteArray creates & returns a copy of stream’s byte array
@@ -256,8 +258,7 @@ public class Table implements Serializable {
                         if (coursesToRemove.size() >= 4) {
                             checkFour = true;
                             currentStudent.getCoursesChosen().removeAll(coursesToRemove);
-                        }
-                        else {
+                        } else {
                             if (coursesToRemove.size() == 0) {
                                 System.out.println("uhhhhhhhh");
                             }
@@ -267,7 +268,7 @@ public class Table implements Serializable {
                             ByteArrayOutputStream tempTableBos = new ByteArrayOutputStream();
                             ObjectOutputStream tempTableOos = new ObjectOutputStream(tempTableBos);
 
-                            tempTableOos.writeObject(tempTable);		// serialize
+                            tempTableOos.writeObject(tempTable);        // serialize
                             tempTableOos.flush();
 
                             // toByteArray creates & returns a copy of stream’s byte array
@@ -285,11 +286,11 @@ public class Table implements Serializable {
             }
             fit = true;
 
-            for (int b = 0; b<2; b++) {
+            for (int b = 0; b < 2; b++) {
                 for (Classroom currentClass : table.get(b)) {
                     if (currentClass.getNumberOfStudents() < 1) {
                         fit = false;
-                        if (b==1) {
+                        if (b == 1) {
                             table = new ArrayList<ArrayList<Classroom>>();
                             break;
                         }
@@ -303,7 +304,7 @@ public class Table implements Serializable {
                 ByteArrayOutputStream studentOGBos = new ByteArrayOutputStream();
                 ObjectOutputStream studentOGOos = new ObjectOutputStream(studentBos);
 
-                studentOos.writeObject(originalStudentList);		// serialize
+                studentOos.writeObject(originalStudentList);        // serialize
                 studentOos.flush();
 
                 // toByteArray creates & returns a copy of stream’s byte array

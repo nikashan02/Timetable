@@ -53,11 +53,16 @@
                            </font></Label>
                         <Button id="create" fx:id="create" mnemonicParsing="false" onAction="#setCreate" stylesheets="@Style.css" text="Create Master Timetable">
                            <VBox.margin>
-                              <Insets top="100.0" />
+                              <Insets top="150.0" />
                            </VBox.margin>
                            <font>
                               <Font name="Comfortaa Bold" size="35.0" />
                            </font></Button>
+                        <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0">
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </ProgressBar>
                      </children>
                   </VBox>
                </children></HBox>
