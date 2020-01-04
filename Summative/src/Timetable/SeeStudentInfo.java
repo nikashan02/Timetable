@@ -98,7 +98,7 @@ public class SeeStudentInfo {
                     chosenStudentInfoListView.getItems().add("");
                     for (Course currentCourse: currentStudent.getCoursesChosen()) {
                         chosenStudentInfoListView.getItems().add(currentCourse.getCourseCode());
-                        System.out.println(currentCourse.getCourseCode());
+                        //System.out.println(currentCourse.getCourseCode());
                     }
                 }
             }

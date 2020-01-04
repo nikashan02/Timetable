@@ -41,6 +41,14 @@ public class MainMenu {
 
     }
 
+    public void editStudentBtnAction(ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("EditStudent.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+    }
 
 
-}
+
+    }

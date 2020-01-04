@@ -28,7 +28,7 @@
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin></Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="Remove Student" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="EditStudentBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editStudentBtnAction" prefHeight="215.0" prefWidth="280.0" text="Edit Student" textAlignment="CENTER" wrapText="true" />
                </children>
                <VBox.margin>
                   <Insets />
