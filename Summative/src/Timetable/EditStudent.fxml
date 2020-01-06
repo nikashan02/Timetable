@@ -9,12 +9,22 @@
     <children>
         <VBox layoutX="141.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
             <children>
-                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
                     <children>
+                  <Button fx:id="mainMenuBtn" mnemonicParsing="false" onAction="#backToMainMenu" style="-fx-background-color: #ffffff;" text="Main Menu">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
                         <Label alignment="CENTER" text="Edit Student" textFill="WHITE" HBox.hgrow="NEVER">
                             <font>
                                 <Font name="Monospaced Bold" size="45.0" />
-                            </font></Label>
+                            </font>
+                     <HBox.margin>
+                        <Insets left="395.0" />
+                     </HBox.margin></Label>
                     </children>
                 </HBox>
                 <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
@@ -48,7 +58,7 @@
                      <font>
                         <Font size="25.0" />
                      </font></Button>
-                  <Button fx:id="removeStudentButton" mnemonicParsing="false" style="-fx-background-color: #ce2029;" text="Remove Student" textFill="#f5f4f4">
+                  <Button fx:id="removeStudentButton" mnemonicParsing="false" onAction="#removeBtnPressed" style="-fx-background-color: #ce2029;" text="Remove Student" textFill="#f5f4f4">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>

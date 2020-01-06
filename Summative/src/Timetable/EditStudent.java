@@ -68,6 +68,8 @@ public class EditStudent {
     ListView coursesListView = new ListView();
     @FXML
     Button searchBtn = new Button();
+    @FXML
+    Button mainMenuBtn = new Button();
 
     private String studentNumber = "";
 
@@ -106,14 +108,30 @@ public class EditStudent {
                                 course8Label.setText(currentCourse.getCourseCode());
                         }
                     }
-                    if (student.getGrade().equals("9")){
-
+                    for (Course course: ImportStudentList.getListCourses()){
+                        coursesListView.getItems().add(course.getCourseCode());
                     }
                 }
             }
         }
     }
+    /*
+    public void removeBtnPressed(ActionEvent event){
+        for(ArrayList<Classroom> currentSemester: ImportStudentList.getMasterTimeTable().getTable()){
+            for (Classroom currentClass: currentSemester){
 
+            }
+        }
+    }
+    */
+
+    public void backToMainMenu(ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+    }
 
 
 }

@@ -31,4 +31,34 @@ public class FunctionMethods {
         return listOfStudents;
     }
 
+    public static ArrayList<Course> importCourses(String name) {
+        String fileName = name;
+        File file = new File(fileName);
+        ArrayList<Course> courses = new ArrayList<Course>();
+        try {
+            Scanner inputStream = new Scanner(file);
+            while(inputStream.hasNext()) {
+                String data = inputStream.next();
+                String[] values = data.split(",");
+                for(int x = 3; x<11; x++) {
+                    Course currentCourse = new Course(values[x]);
+                    boolean inList = false;
+                    for (Course checkCourse: courses) {
+                        if (checkCourse.getCourseCode().equals(currentCourse.getCourseCode())) {
+                            inList = true;
+                        }
+                    }
+                    if (!inList) {
+                        courses.add(currentCourse);
+                    }
+                }
+            }
+            inputStream.close();
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+        return courses;
+    }
+
 }

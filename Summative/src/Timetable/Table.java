@@ -316,6 +316,7 @@ public class Table implements Serializable {
 
                 ArrayList<Student> originalOGStudentList = (ArrayList<Student>) studentOis.readObject();
 
+
                 listOfStudents = originalOGStudentList;
             }
         }

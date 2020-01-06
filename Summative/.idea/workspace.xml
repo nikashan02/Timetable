@@ -5,9 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timetable/EditStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/EditStudent.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timetable/EditStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/EditStudent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timetable/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timetable/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Timetable/SeeStudentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/SeeStudentInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timetable/FunctionMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/FunctionMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timetable/ImportStudentList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/ImportStudentList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timetable/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/Table.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

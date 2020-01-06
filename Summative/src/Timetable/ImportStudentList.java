@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.control.Tab;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -38,6 +39,9 @@ public class ImportStudentList {
 
     private static ArrayList<Student> listStudents = null;
     private static ArrayList<Student> cloneOfListStudents = null;
+    private static ArrayList<Course> listCourses = null;
+    private static ArrayList<ArrayList<Classroom>> outerList = new ArrayList<ArrayList<Classroom>>(2);
+    private static Table masterTable = new Table(outerList);
 
 
 
@@ -59,6 +63,7 @@ public class ImportStudentList {
 
     public void setCreate(ActionEvent event) throws IOException, ClassNotFoundException{
         listStudents = FunctionMethods.importStudents(fileName);
+        listCourses = FunctionMethods.importCourses(fileName);
 
         ByteArrayOutputStream workingBos = new ByteArrayOutputStream();
         ObjectOutputStream workingOos = new ObjectOutputStream(workingBos);
@@ -75,8 +80,6 @@ public class ImportStudentList {
 
         cloneOfListStudents = (ArrayList<Student>) workingOis.readObject();
 
-        ArrayList<ArrayList<Classroom>> outerList = new ArrayList<ArrayList<Classroom>>(2);
-        Table masterTable = new Table(outerList);
         try {
             masterTable.createMasterTimetable(listStudents);
         } catch (Exception e) {
@@ -88,13 +91,15 @@ public class ImportStudentList {
         return cloneOfListStudents;
     }
 
+    public static ArrayList<Course> getListCourses() { return listCourses; }
+
+    public static Table getMasterTimeTable() { return masterTable; }
+
     public void backToMainMenu(ActionEvent event) throws IOException {
         Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         Scene pageScene = new Scene(page);
         Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         appStage.setScene(pageScene);
         appStage.show();
-
     }
-
 }
