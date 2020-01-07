@@ -108,22 +108,15 @@ public class EditStudent {
                                 course8Label.setText(currentCourse.getCourseCode());
                         }
                     }
+
                     for (Course course: ImportStudentList.getListCourses()){
                         coursesListView.getItems().add(course.getCourseCode());
                     }
+
                 }
             }
         }
     }
-    /*
-    public void removeBtnPressed(ActionEvent event){
-        for(ArrayList<Classroom> currentSemester: ImportStudentList.getMasterTimeTable().getTable()){
-            for (Classroom currentClass: currentSemester){
-
-            }
-        }
-    }
-    */
 
     public void backToMainMenu(ActionEvent event) throws IOException {
         Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));

@@ -20,6 +20,8 @@ public class MainMenu {
     Button createTimetable = new Button();
     @FXML
     Button studentInfoBtn = new Button();
+    @FXML
+    Button EditStudentBtn = new Button();
 
 
 
@@ -51,4 +53,4 @@ public class MainMenu {
 
 
 
-    }
+}
