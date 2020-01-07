@@ -58,7 +58,7 @@
                      <font>
                         <Font size="25.0" />
                      </font></Button>
-                  <Button fx:id="removeStudentButton" mnemonicParsing="false" style="-fx-background-color: #ce2029;" text="Remove Student" textFill="#f5f4f4">
+                  <Button fx:id="removeStudentButton" mnemonicParsing="false" onAction="#removeButtonPressed" style="-fx-background-color: #ce2029;" text="Remove Student" textFill="#f5f4f4">
                      <HBox.margin>
                         <Insets left="30.0" />
                      </HBox.margin>

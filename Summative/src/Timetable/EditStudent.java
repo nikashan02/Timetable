@@ -20,6 +20,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class EditStudent {
     @FXML
@@ -113,6 +114,30 @@ public class EditStudent {
                         coursesListView.getItems().add(course.getCourseCode());
                     }
 
+                }
+            }
+        }
+    }
+
+    public void removeButtonPressed(ActionEvent event) {
+        for (ArrayList<Classroom> semester: ImportStudentList.getMasterTimeTable().getTable()) {
+            for (Classroom currentClass: semester) {
+                Iterator<Student> itr = currentClass.getStudents().iterator();
+                while (itr.hasNext()) {
+                    Student currentStudent = itr.next();
+                    if (currentStudent.getStudentNumber().equals(studentNumberTextField.getText())) {
+                        itr.remove();
+
+                        Iterator<Student> studentItr = ImportStudentList.getListStudents().iterator();
+
+                        while (studentItr.hasNext()) {
+                            Student studentToDelete = studentItr.next();
+                            if (studentToDelete.getStudentNumber().equals(studentNumberTextField.getText())) {
+                                studentItr.remove();
+                            }
+                        }
+
+                    }
                 }
             }
         }
