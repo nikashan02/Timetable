@@ -24,7 +24,7 @@
                      <HBox.margin>
                         <Insets left="30.0" right="30.0" />
                      </HBox.margin></Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="Add Student " textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="addStudentBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addStudentBtnAction" prefHeight="215.0" prefWidth="280.0" text="Add Student " textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin></Button>

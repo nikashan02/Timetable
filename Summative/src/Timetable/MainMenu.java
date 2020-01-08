@@ -50,6 +50,13 @@ public class MainMenu {
         appStage.setScene(pageScene);
         appStage.show();
     }
+    public void addStudentBtnAction(ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("AddStudent.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+    }
 
 
 

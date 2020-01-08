@@ -70,5 +70,23 @@ public class AddStudent {
     @FXML
     ListView coursesListView = new ListView();
 
-    
+    public void backToMainMenu(ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+    }
+
+    public void displayCourses(ActionEvent event){
+        coursesListView.getItems().clear();
+        for (Course course: ImportStudentList.getListCourses()){
+            coursesListView.getItems().add(course.getCourseCode());
+        }
+
+
+
+
+    }
+
 }
