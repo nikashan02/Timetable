@@ -5,10 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/EditStudent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Summative/Timetable/EditStudent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/EditStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Summative/Timetable/EditStudent.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Summative/Timetable/Template.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Summative/Timetable/Template.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timetable/EditStudent.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/EditStudent.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Timetable/EditStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/EditStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Timetable/Template.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Timetable/Template.fxml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,19 +114,13 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -136,12 +132,6 @@
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Timetable.Main" />
@@ -196,6 +186,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -231,26 +233,30 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom" timestamp="1577337615618">
+    <state x="490" y="250" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1578407256158">
+      <screen x="0" y="0" width="1280" height="720" />
+    </state>
+    <state x="490" y="250" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.720@0.0.1280.720" timestamp="1578407256158" />
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1578494986225">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1237" height="51" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1577156977343" />
-    <state width="1237" height="283" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1577337615618" />
-    <state width="1237" height="283" key="GridCell.Tab.0.center" timestamp="1577337615617">
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom/0.0.1280.720@0.0.1280.720" timestamp="1578494986225" />
+    <state width="1237" height="2" key="GridCell.Tab.0.center" timestamp="1578494986225">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1237" height="51" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1577156977342" />
-    <state width="1237" height="283" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1577337615617" />
-    <state width="1237" height="283" key="GridCell.Tab.0.left" timestamp="1577337615617">
+    <state width="1237" height="2" key="GridCell.Tab.0.center/0.0.1280.720@0.0.1280.720" timestamp="1578494986225" />
+    <state width="1237" height="2" key="GridCell.Tab.0.left" timestamp="1578494986224">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1237" height="51" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1577156977341" />
-    <state width="1237" height="283" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1577337615617" />
-    <state width="1237" height="283" key="GridCell.Tab.0.right" timestamp="1577337615617">
+    <state width="1237" height="2" key="GridCell.Tab.0.left/0.0.1280.720@0.0.1280.720" timestamp="1578494986224" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right" timestamp="1578494986225">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state width="1237" height="51" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1577156977343" />
-    <state width="1237" height="283" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1577337615617" />
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.720@0.0.1280.720" timestamp="1578494986225" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -262,7 +268,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Summative$Main.ic" NAME="Main Coverage Results" MODIFIED="1577153636844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Summative$Main.ic" NAME="Main Coverage Results" MODIFIED="1578494986145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>sample.*</FILTER>
     </SUITE>
   </component>

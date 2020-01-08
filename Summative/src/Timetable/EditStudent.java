@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
@@ -149,6 +150,36 @@ public class EditStudent {
         Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         appStage.setScene(pageScene);
         appStage.show();
+    }
+    public void changeCourse(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        String id = btn.getId();
+        String selectedItem = (String) coursesListView .getSelectionModel().getSelectedItem();
+        if (id.equals("course1Button")){
+            course1Label.setText(selectedItem);
+        }
+        if (id.equals("course2Button")){
+            course2Label.setText(selectedItem);
+        }
+        if (id.equals("course3Button")){
+            course3Label.setText(selectedItem);
+        }
+        if (id.equals("course4Button")){
+            course4Label.setText(selectedItem);
+        }
+        if (id.equals("course5Button")){
+            course5Label.setText(selectedItem);
+        }
+        if (id.equals("course6Button")){
+            course6Label.setText(selectedItem);
+        }
+        if (id.equals("course7Button")){
+            course7Label.setText(selectedItem);
+        }
+        if (id.equals("course8Button")){
+            course8Label.setText(selectedItem);
+        }
+
     }
 
 
