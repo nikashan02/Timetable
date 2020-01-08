@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #C2941B;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Timetable.EditStudent">
+    <children>
+        <VBox layoutX="141.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
+                    <children>
+                        <Button fx:id="mainMenuBtn" mnemonicParsing="false" onAction="#backToMainMenu" style="-fx-background-color: #ffffff;" text="Main Menu">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="18.0" />
+                            </font></Button>
+                        <Label alignment="CENTER" text="Add Student" textFill="WHITE" HBox.hgrow="NEVER">
+                            <font>
+                                <Font name="Monospaced Bold" size="45.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="395.0" />
+                            </HBox.margin></Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="75.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
+                    <children>
+                        <Label text="Student #:" textFill="WHITE">
+                            <font>
+                                <Font name="Monospaced Bold" size="30.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="50.0" />
+                            </HBox.margin></Label>
+                        <TextField fx:id="studentNumberTextField" onAction="#studentNumberTextFieldAction">
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="15.0" />
+                            </font></TextField>
+                        <Button fx:id="addStudentButton" mnemonicParsing="false" onAction="" style="-fx-background-color: #00ff00;" text="Add Student" textFill="#f5f4f4">
+                            <HBox.margin>
+                                <Insets left="400.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="25.0" />
+                            </font></Button>
+                    </children></HBox>
+                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
+                    <children>
+                        <HBox prefHeight="475.0" prefWidth="635.0">
+                            <children>
+                                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="210.0" spacing="17.0">
+                                    <children>
+                                        <Label text="Name:" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font></Label>
+                                        <Label text="Grade:" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font></Label>
+                                        <Button fx:id="course1Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 1" />
+                                        <Button fx:id="course2Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 2" />
+                                        <Button fx:id="course3Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 3" />
+                                        <Button fx:id="course4Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 4" />
+                                        <Button fx:id="course5Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 5" />
+                                        <Button fx:id="course6Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 6" />
+                                        <Button fx:id="course7Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 7" />
+                                        <Button fx:id="course8Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 8" />
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="15.0" top="15.0" />
+                                    </padding>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin></VBox>
+                                <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="425.0" spacing="17.0">
+                                    <children>
+                                        <TextField fx:id="nameTextField">
+                                            <VBox.margin>
+                                                <Insets left="100.0" right="100.0" />
+                                            </VBox.margin></TextField>
+                                        <TextField fx:id="gradeTextField">
+                                            <VBox.margin>
+                                                <Insets left="100.0" right="100.0" />
+                                            </VBox.margin></TextField>
+                                        <Label fx:id="course1Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font></Label>
+                                        <Label fx:id="course2Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="course3Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="course4Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="course5Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="course6Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="course7Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="course8Label" textFill="WHITE">
+                                            <font>
+                                                <Font size="20.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin>
+                                    <padding>
+                                        <Insets top="14.0" />
+                                    </padding></VBox>
+                            </children>
+                        </HBox>
+                        <VBox prefHeight="200.0" prefWidth="635.0">
+                            <children>
+                                <ListView fx:id="coursesListView" prefHeight="456.0" prefWidth="605.0">
+                                    <VBox.margin>
+                                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                                    </VBox.margin>
+                                </ListView>
+                            </children></VBox>
+                    </children></HBox>
+                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <children>
+                        <Label text="© str() Designs 2020" textFill="WHITE">
+                            <font>
+                                <Font name="Monospaced Bold" size="38.0" />
+                            </font></Label>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
