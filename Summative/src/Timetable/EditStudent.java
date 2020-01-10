@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.nio.channels.FileChannel;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Collections;
 
 public class EditStudent {
     @FXML
@@ -144,42 +145,162 @@ public class EditStudent {
         }
     }
 
+    public void changeCourse(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        String id = btn.getId();
+        String selectedItem = (String) coursesListView .getSelectionModel().getSelectedItem();
+        boolean possible;
+        if (id.equals("course1Button")){
+            possible  = switchCourses(course1Label.getText(), selectedItem);
+            if (possible){
+                course1Label.setText(selectedItem);
+            }else{
+                course1Label.setText("Class is Full!");
+            }
+        }
+        if (id.equals("course2Button")){
+            possible  = switchCourses(course2Label.getText(), selectedItem);
+            if (possible){
+                course2Label.setText(selectedItem);
+            }else{
+                course2Label.setText("Class is Full!");
+            }
+        }
+        if (id.equals("course3Button")){
+            possible  = switchCourses(course3Label.getText(), selectedItem);
+            if (possible){
+                course3Label.setText(selectedItem);
+            }else{
+                course3Label.setText("Class is Full!");
+            }
+        }
+        if (id.equals("course4Button")){
+            possible  = switchCourses(course4Label.getText(), selectedItem);
+            if (possible){
+                course4Label.setText(selectedItem);
+            }else{
+                course4Label.setText("Class is Full!");
+            }
+        }
+        if (id.equals("course5Button")){
+            possible  = switchCourses(course5Label.getText(), selectedItem);
+            if (possible){
+                course5Label.setText(selectedItem);
+            }else{
+                course5Label.setText("Class is Full!");
+            }
+        }
+        if (id.equals("course6Button")){
+            possible  = switchCourses(course6Label.getText(), selectedItem);
+            if (possible){
+                course6Label.setText(selectedItem);
+            }else{
+                course6Label.setText("Class is Full!");
+            }
+        }
+        if (id.equals("course7Button")){
+            possible  = switchCourses(course7Label.getText(), selectedItem);
+            if (possible){
+                course7Label.setText(selectedItem);
+            }else{
+                course7Label.setText("Class is Full!");
+            }
+        }
+        if (id.equals("course8Button")){
+            possible  = switchCourses(course8Label.getText(), selectedItem);
+            if (possible){
+                course8Label.setText(selectedItem);
+            }else{
+                course8Label.setText("Class is Full!");
+            }
+        }
+
+    }
+
+    public boolean switchCourses(String previousClassroomLabel, String addedClassroomLabel){
+        boolean possible = false;
+        int currentSemester = 0;
+        boolean found = false;
+        int previousClassroomIndex = -1;
+        int potentialClassroomIndex = -1;
+        int previousCourseIndex = 0;
+        int newCourseIndex = 0;
+
+        for (ArrayList<Classroom> checkSemester: ImportStudentList.getMasterTimeTable().getTable()){
+            for(Classroom checkClassroom: checkSemester){
+                previousClassroomIndex++;
+                if (checkClassroom.getCourse().getCourseCode().equals(previousClassroomLabel)){
+                    found= true;
+                    break;
+                }
+            }
+            if (found){
+                break;
+            }
+            //Makes sure the semester never gets to 2 otherwise code breaks because semester can either only equal 0 or 1
+            if (currentSemester == 1){
+                break;
+            }
+            currentSemester++;
+        }
+
+        for (Classroom potentialClassroom: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester)){
+            potentialClassroomIndex = 0;
+            if (potentialClassroom.getCourse().getCourseCode().equals(addedClassroomLabel) && potentialClassroom.getAvailableSeats()>0){
+                possible = true;
+                break;
+            }
+            potentialClassroomIndex++;
+
+        }
+
+        if (possible){
+            for(Student currentStudent: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents()){
+                if (currentStudent.getStudentNumber().equals(studentNumberTextField.getText())){
+                    ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents().remove(currentStudent);
+                    break;
+                }
+            }
+            for(Student currentStudent2: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents()){
+                if (currentStudent2.getStudentNumber().equals(studentNumberTextField.getText())){
+                    ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(potentialClassroomIndex).getStudents().add(currentStudent2);
+                    break;
+                }
+            }
+            for (Student thisStudent: ImportStudentList.getListStudents()){
+                int prevCounter = -1;
+                int newCounter = -1;
+                if (thisStudent.getStudentNumber().equals(studentNumberTextField.getText())){
+                    for (Course tempCourse: thisStudent.getCoursesChosen()){
+                        prevCounter++;
+                        if (tempCourse.getCourseCode().equals(previousClassroomLabel)){
+                            previousCourseIndex = prevCounter;
+                            break;
+                        }
+                    }
+                    for (Course tempCourse: ImportStudentList.getListCourses()){
+                        newCounter++;
+                        if (tempCourse.getCourseCode().equals(addedClassroomLabel)){
+                            newCourseIndex = newCounter;
+                            break;
+                        }
+                    }
+                    thisStudent.getCoursesChosen().remove(previousCourseIndex);
+                    thisStudent.getCoursesChosen().add(previousCourseIndex, ImportStudentList.getListCourses().get(newCourseIndex));
+                    break;
+                }
+            }
+        }
+        return possible;
+    }
+
+
     public void backToMainMenu(ActionEvent event) throws IOException {
         Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         Scene pageScene = new Scene(page);
         Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         appStage.setScene(pageScene);
         appStage.show();
-    }
-    public void changeCourse(ActionEvent event) {
-        Button btn = (Button) event.getSource();
-        String id = btn.getId();
-        String selectedItem = (String) coursesListView .getSelectionModel().getSelectedItem();
-        if (id.equals("course1Button")){
-            course1Label.setText(selectedItem);
-        }
-        if (id.equals("course2Button")){
-            course2Label.setText(selectedItem);
-        }
-        if (id.equals("course3Button")){
-            course3Label.setText(selectedItem);
-        }
-        if (id.equals("course4Button")){
-            course4Label.setText(selectedItem);
-        }
-        if (id.equals("course5Button")){
-            course5Label.setText(selectedItem);
-        }
-        if (id.equals("course6Button")){
-            course6Label.setText(selectedItem);
-        }
-        if (id.equals("course7Button")){
-            course7Label.setText(selectedItem);
-        }
-        if (id.equals("course8Button")){
-            course8Label.setText(selectedItem);
-        }
-
     }
 
 
