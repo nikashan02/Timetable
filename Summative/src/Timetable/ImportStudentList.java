@@ -95,6 +95,15 @@ public class ImportStudentList {
 
     public static Table getMasterTimeTable() { return masterTable; }
 
+    public static void setMasterTimeTable(Table tableToImport) { masterTable = tableToImport; }
+
+    public static void setListStudents(ArrayList<Student> studentsToImport) {
+        listStudents = studentsToImport;
+        cloneOfListStudents = studentsToImport;
+    }
+
+    public static void setListCourses(ArrayList<Course> coursesToImport) { listCourses = coursesToImport; }
+
     public void backToMainMenu(ActionEvent event) throws IOException {
         Parent page = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
         Scene pageScene = new Scene(page);

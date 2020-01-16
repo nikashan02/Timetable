@@ -14,7 +14,15 @@
                   <Label alignment="CENTER" text="TIME TABLE" textFill="WHITE" HBox.hgrow="NEVER">
                      <font>
                         <Font name="Monospaced Bold" size="45.0" />
-                     </font></Label>
+                     </font>
+                     <HBox.margin>
+                        <Insets left="370.0" />
+                     </HBox.margin></Label>
+                  <Button fx:id="UpdateBtn" mnemonicParsing="false" onAction="#updateBtnAction" text="Update">
+                     <HBox.margin>
+                        <Insets left="200.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
@@ -50,7 +58,7 @@
                         <Insets right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="Save and Quit" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="SaveBtn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#saveBtnAction" prefHeight="215.0" prefWidth="280.0" text="Save and Quit" textAlignment="CENTER" wrapText="true" />
                </children></HBox>
 
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8C1C3A;">

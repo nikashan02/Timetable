@@ -144,7 +144,7 @@ public class EditStudent {
             }
         }
     }
-
+             
     public void changeCourse(ActionEvent event) {
         Button btn = (Button) event.getSource();
         String id = btn.getId();
@@ -218,8 +218,10 @@ public class EditStudent {
     }
 
     public boolean switchCourses(String previousClassroomLabel, String addedClassroomLabel){
+        System.out.println(previousClassroomLabel);
+        System.out.println(addedClassroomLabel);
         boolean possible = false;
-        int currentSemester = 0;
+        int currentSemester = -1;
         boolean found = false;
         int previousClassroomIndex = -1;
         int potentialClassroomIndex = -1;
@@ -227,26 +229,35 @@ public class EditStudent {
         int newCourseIndex = 0;
 
         for (ArrayList<Classroom> checkSemester: ImportStudentList.getMasterTimeTable().getTable()){
-            for(Classroom checkClassroom: checkSemester){
+            currentSemester++;
+            for (Classroom checkClassroom: checkSemester){
                 previousClassroomIndex++;
                 if (checkClassroom.getCourse().getCourseCode().equals(previousClassroomLabel)){
-                    found= true;
+                    for (Student tempCheckStudent: checkClassroom.getStudents()) {
+                        if (tempCheckStudent.getStudentNumber().equals(studentNumberTextField.getText())) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (found) {
                     break;
                 }
             }
-            if (found){
+            if (found) {
+                System.out.println("found it");
                 break;
             }
             //Makes sure the semester never gets to 2 otherwise code breaks because semester can either only equal 0 or 1
-            if (currentSemester == 1){
-                break;
-            }
-            currentSemester++;
+            previousClassroomIndex = -1;
         }
+
+        System.out.println(currentSemester);
+        System.out.println(previousClassroomIndex);
 
         for (Classroom potentialClassroom: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester)){
             potentialClassroomIndex = 0;
-            if (potentialClassroom.getCourse().getCourseCode().equals(addedClassroomLabel) && potentialClassroom.getAvailableSeats()>0){
+            if (potentialClassroom.getCourse().getCourseCode().equals(addedClassroomLabel) && potentialClassroom.getAvailableSeats()>0 && potentialClassroom.getPeriod() == ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getPeriod()){
                 possible = true;
                 break;
             }
@@ -255,21 +266,37 @@ public class EditStudent {
         }
 
         if (possible){
-            for(Student currentStudent: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents()){
-                if (currentStudent.getStudentNumber().equals(studentNumberTextField.getText())){
-                    ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents().remove(currentStudent);
-                    break;
-                }
-            }
             for(Student currentStudent2: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents()){
                 if (currentStudent2.getStudentNumber().equals(studentNumberTextField.getText())){
                     ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(potentialClassroomIndex).getStudents().add(currentStudent2);
                     break;
                 }
             }
+
+            for(Student currentStudent: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents()){
+                if (currentStudent.getStudentNumber().equals(studentNumberTextField.getText())){
+                    ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents().remove(currentStudent);
+                    break;
+                }
+            }
+
+            for(Student currentStudent3: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(previousClassroomIndex).getStudents()){
+                if (currentStudent3.getStudentNumber().equals(studentNumberTextField.getText())){
+                    System.out.println("Still there");
+                    break;
+                }
+            }
+
+            for(Student currentStudent4: ImportStudentList.getMasterTimeTable().getTable().get(currentSemester).get(potentialClassroomIndex).getStudents()){
+                if (currentStudent4.getStudentNumber().equals(studentNumberTextField.getText())){
+                    System.out.println("Also there");
+                    break;
+                }
+            }
+
             for (Student thisStudent: ImportStudentList.getListStudents()){
                 int prevCounter = -1;
-                int newCounter = -1;
+                int newCounter = -1;                                           
                 if (thisStudent.getStudentNumber().equals(studentNumberTextField.getText())){
                     for (Course tempCourse: thisStudent.getCoursesChosen()){
                         prevCounter++;
@@ -287,6 +314,9 @@ public class EditStudent {
                     }
                     thisStudent.getCoursesChosen().remove(previousCourseIndex);
                     thisStudent.getCoursesChosen().add(previousCourseIndex, ImportStudentList.getListCourses().get(newCourseIndex));
+                    for (Course checkTempCourse: thisStudent.getCoursesChosen()) {
+                        System.out.println(checkTempCourse.getCourseCode());
+                    }
                     break;
                 }
             }
