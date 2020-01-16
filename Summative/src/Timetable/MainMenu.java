@@ -28,6 +28,8 @@ public class MainMenu {
     Button SaveBtn = new Button();
     @FXML
     Button UpdateBtn = new Button();
+    @FXML
+    Button viewTimetableBtn = new Button();
 
 
 
@@ -64,6 +66,15 @@ public class MainMenu {
         appStage.setScene(pageScene);
         appStage.show();
     }
+
+    public void viewTimeTableBtnPressed(ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("ViewTimetable.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+    }
+
     public void saveBtnAction(ActionEvent event) throws IOException {
         try {
             FileOutputStream fos = new FileOutputStream("MasterTimetable");
@@ -71,7 +82,9 @@ public class MainMenu {
             oos.writeObject(ImportStudentList.getMasterTimeTable());
             oos.close();
             fos.close();
-        }
+
+    }
+
         catch (IOException e) {
             e.printStackTrace();
         }
