@@ -43,12 +43,12 @@
                </VBox.margin></HBox>
             <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="1270.0" style="-fx-background-color: #595959;">
                <children>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="See List Of All Courses" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="seeCourses" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#seeCourses" prefHeight="215.0" prefWidth="280.0" text="See List Of All Courses" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="215.0" prefWidth="280.0" text="See List Of All Classrooms" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="seeListOfClassrooms" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#seeClassroom" prefHeight="215.0" prefWidth="280.0" text="See List Of All Classrooms" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets right="30.0" />
                      </HBox.margin>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #C2941B;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Timetable.SeeCourses">
+    <VBox layoutX="141.0" layoutY="160.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
+            <children>
+                <Button fx:id="mainMenuBtn" mnemonicParsing="false" onAction="#backToMainMenu" style="-fx-background-color: #ffffff;" text="Main Menu">
+                    <HBox.margin>
+                        <Insets left="10.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font size="18.0" />
+                    </font></Button>
+                <Label alignment="CENTER" text="TIME TABLE" textFill="WHITE" HBox.hgrow="NEVER">
+                    <font>
+                        <Font name="Monospaced Bold" size="45.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets left="395.0" />
+                    </HBox.margin>
+                </Label>
+            </children>
+        </HBox>
+        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1270.0">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="635.0">
+                    <children>
+                        <HBox prefHeight="150.0" prefWidth="636.0" style="-fx-background-color: #595959;">
+                            <children>
+                                <VBox prefHeight="150.0" prefWidth="388.0">
+                                    <children>
+                                        <TextField fx:id="searchCourse" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="48.0" prefWidth="279.0" promptText="SEARCH COURSE CODE">
+                                            <VBox.margin>
+                                                <Insets right="20.0" top="50.0" />
+                                            </VBox.margin>
+                                            <font>
+                                                <Font name="Comfortaa Bold" size="14.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets left="20.0" />
+                                            </padding>
+                                        </TextField>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding></VBox>
+                                <Button fx:id="searchBtn" mnemonicParsing="false" onAction="#searchCourses" prefHeight="44.0" prefWidth="117.0" text="Search" textAlignment="CENTER">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                    <HBox.margin>
+                                        <Insets left="90.0" top="50.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children></HBox>
+                        <HBox prefHeight="400.0" prefWidth="200.0" style="-fx-background-color: #595959;">
+                            <children>
+                                <HBox>
+                                    <children>
+                                        <VBox>
+                                            <children>
+                                                <Label fx:id="displayCourses" onMouseClicked="#viewStudentsMethod" prefHeight="106.0" prefWidth="670.0" text=" Course's Found:" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="Comfortaa Regular" size="23.0" />
+                                                    </font>
+                                                </Label>
+                                                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="636.0">
+                                                    <children>
+                                                        <ScrollPane fx:id="displayCourses" onMouseClicked="#viewClassesMethod" prefHeight="304.0" prefWidth="636.0">
+                                                            <content>
+                                                                <ListView fx:id="viewClassrooms" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#viewStudentsMethod" prefHeight="292.0" prefWidth="635.0" />
+                                                            </content>
+                                                        </ScrollPane>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                            </children></HBox>
+                    </children>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="635.0" style="-fx-background-color: #595959;">
+                    <children>
+                        <ScrollPane prefHeight="452.0" prefWidth="535.0">
+                            <VBox.margin>
+                                <Insets bottom="50.0" left="50.0" right="50.0" top="50.0" />
+                            </VBox.margin>
+                            <content>
+                                <ListView fx:id="viewClassrooms" prefHeight="450.0" prefWidth="535.0" />
+                            </content>
+                        </ScrollPane>
+                    </children></VBox>
+            </children></HBox>
+        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1270.0" style="-fx-background-color: #8c1c3a;">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <children>
+                <Label alignment="TOP_RIGHT" contentDisplay="CENTER" text="© str() Designs 2020" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font name="Monospaced Bold" size="38.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+    </VBox>
+</AnchorPane>

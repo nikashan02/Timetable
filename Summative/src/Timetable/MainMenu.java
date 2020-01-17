@@ -30,6 +30,10 @@ public class MainMenu {
     Button UpdateBtn = new Button();
     @FXML
     Button viewTimetableBtn = new Button();
+    @FXML
+    Button seeListOfClassrooms = new Button();
+    @FXML
+    Button seeCourses = new Button();
 
 
 
@@ -71,6 +75,22 @@ public class MainMenu {
         Parent page = FXMLLoader.load(getClass().getResource("ViewTimetable.fxml"));
         Scene pageScene = new Scene(page);
         Stage appStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+    }
+
+
+    public void seeClassroom (ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("SeeClassrooms.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(pageScene);
+        appStage.show();
+    }
+    public void seeCourses (ActionEvent event) throws IOException {
+        Parent page = FXMLLoader.load(getClass().getResource("SeeCourses.fxml"));
+        Scene pageScene = new Scene(page);
+        Stage appStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         appStage.setScene(pageScene);
         appStage.show();
     }
