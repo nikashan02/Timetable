@@ -43,19 +43,27 @@
                             <font>
                                 <Font size="15.0" />
                             </font></TextField>
-                        <Button fx:id="addStudentButton" mnemonicParsing="false" style="-fx-background-color: #06c258;" text="Add Student" textFill="#f5f4f4">
+                        <Button fx:id="addStudentButton" mnemonicParsing="false" onAction="#addStudentButtonAction" style="-fx-background-color: #06c258;" text="Add Student" textFill="#f5f4f4">
                             <HBox.margin>
-                                <Insets left="400.0" />
+                                <Insets left="165.0" />
                             </HBox.margin>
                             <font>
                                 <Font size="25.0" />
                             </font></Button>
-                  <Button fx:id="dispCourses" mnemonicParsing="false" onAction="#displayCourses" prefHeight="47.0" prefWidth="135.0" style="-fx-background-color: #C2941B;" text="Display Courses" textFill="WHITE">
+                  <Button fx:id="addCourseButton" mnemonicParsing="false" onAction="#addCourse" style="-fx-background-color: #42a5f5;" text="Add Course" textFill="#f5f4f4">
                      <HBox.margin>
-                        <Insets left="100.0" />
+                        <Insets left="60.0" />
                      </HBox.margin>
                      <font>
-                        <Font name="System Bold" size="15.0" />
+                        <Font size="25.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="displayCourses" mnemonicParsing="false" onAction="#displayCoursesAction" prefHeight="47.0" prefWidth="205.0" style="-fx-background-color: #C2941B;" text="Display Courses" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="25.0" />
                      </font>
                   </Button>
                     </children></HBox>
@@ -73,14 +81,14 @@
                                             <font>
                                                 <Font size="20.0" />
                                             </font></Label>
-                                        <Button fx:id="course1Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" styleClass="Style.css" text="Course 1" />
-                                        <Button fx:id="course2Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 2" />
-                                        <Button fx:id="course3Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 3" />
-                                        <Button fx:id="course4Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 4" />
-                                        <Button fx:id="course5Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 5" />
-                                        <Button fx:id="course6Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 6" />
-                                        <Button fx:id="course7Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 7" />
-                                        <Button fx:id="course8Button" mnemonicParsing="false" style="-fx-background-color: #ffffff;" text="Course 8" />
+                                        <Button fx:id="course1Button" mnemonicParsing="false" onAction="#course1ButtonAction" style="-fx-background-color: #ffffff;" styleClass="Style.css" text="Course 1" />
+                                        <Button fx:id="course2Button" mnemonicParsing="false" onAction="#course2ButtonAction" style="-fx-background-color: #ffffff;" text="Course 2" />
+                                        <Button fx:id="course3Button" mnemonicParsing="false" onAction="#course3ButtonAction" style="-fx-background-color: #ffffff;" text="Course 3" />
+                                        <Button fx:id="course4Button" mnemonicParsing="false" onAction="#course4ButtonAction" style="-fx-background-color: #ffffff;" text="Course 4" />
+                                        <Button fx:id="course5Button" mnemonicParsing="false" onAction="#course5ButtonAction" style="-fx-background-color: #ffffff;" text="Course 5" />
+                                        <Button fx:id="course6Button" mnemonicParsing="false" onAction="#course6ButtonAction" style="-fx-background-color: #ffffff;" text="Course 6" />
+                                        <Button fx:id="course7Button" mnemonicParsing="false" onAction="#course7ButtonAction" style="-fx-background-color: #ffffff;" text="Course 7" />
+                                        <Button fx:id="course8Button" mnemonicParsing="false" onAction="#course8ButtonAction" style="-fx-background-color: #ffffff;" text="Course 8" />
                                     </children>
                                     <padding>
                                         <Insets bottom="15.0" top="15.0" />

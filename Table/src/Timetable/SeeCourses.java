@@ -38,20 +38,22 @@ public class SeeCourses {
 
     public void searchCourses (ActionEvent event){
         displayCourses.getItems().clear();
+        viewClassrooms.getItems().clear();
         String codeEntered = searchCourse.getText();
         for (Course currentCourse: ImportStudentList.getListCourses()){
-            viewClassrooms.getItems().add(currentCourse.getCourseCode());
+            if (currentCourse.getCourseCode().contains(codeEntered)) {
+                displayCourses.getItems().add(currentCourse.getCourseCode());
+            }
         }
-
     }
 
     public void viewClassesMethod () {
         viewClassrooms.getItems().clear();
-        String selectedItem = (String) viewClassrooms .getSelectionModel().getSelectedItem();
+        String selectedItem = (String) displayCourses.getSelectionModel().getSelectedItem();
         for (ArrayList<Classroom> semester: ImportStudentList.getMasterTimeTable().getTable()) {
             for(Classroom currentClass: semester) {
-                if (currentClass.getClassCode().contains(selectedItem)){
-                        viewClassrooms.getItems().add(currentClass);
+                if (currentClass.getCourse().getCourseCode().equals(selectedItem)){
+                        viewClassrooms.getItems().add(currentClass.getClassCode());
                     }
                 }
             }

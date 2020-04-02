@@ -64,16 +64,16 @@
                                     <children>
                                         <VBox>
                                             <children>
-                                                <Label fx:id="displayCourses" onMouseClicked="#viewStudentsMethod" prefHeight="106.0" prefWidth="670.0" text=" Course's Found:" textFill="WHITE">
+                                                <Label prefHeight="106.0" prefWidth="670.0" text=" Course's Found:" textFill="WHITE">
                                                     <font>
                                                         <Font name="Comfortaa Regular" size="23.0" />
                                                     </font>
                                                 </Label>
                                                 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="291.0" prefWidth="636.0">
                                                     <children>
-                                                        <ScrollPane fx:id="displayCourses" onMouseClicked="#viewClassesMethod" prefHeight="304.0" prefWidth="636.0">
+                                                        <ScrollPane prefHeight="304.0" prefWidth="636.0">
                                                             <content>
-                                                                <ListView fx:id="viewClassrooms" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#viewStudentsMethod" prefHeight="292.0" prefWidth="635.0" />
+                                                                <ListView fx:id="displayCourses" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#viewClassesMethod" prefHeight="292.0" prefWidth="635.0" />
                                                             </content>
                                                         </ScrollPane>
                                                     </children>
